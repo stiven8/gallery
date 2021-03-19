@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Ako imate neke primedbe, neki savet kako sam drugacije mogao da uradim neku stvar, neku precicu kojom bih lakse mogao da uradim zadatak, 
+        ili ako nesto nije ispunjeno ili ne valja,
+        molim vas recite mi. Postavio sam vam i neka pitanja u CSS komentarima. Unapred hvala. */
+        body {
+            font-family: sans-serif;
+            font-size: 1.3em;
+        }
+        h1 {
+            font-weight: lighter;
+            font-size: 2em;
+        }
+        p {
+            font-size: 1em;
+        }
+        #wrapper-1 {
+            max-width: 960px;
+            width: 90%;
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        #container {
+            max-width: 960px;
+            width: 90%;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 16px;
+        }
+        .tile { /* Da li postoji neki drugi nacin da se podeli div, ili mora unutar jednog div-a da se prave dva div-a? */
+            height: 160px;
+            border: 1px solid rgb(190, 190, 190);
+            border-bottom-left-radius: 10px; /* Zasto se ivice slike izlaze iz zakrivljenog okvira kada se stavi samo border-radius:10px? */
+            border-bottom-right-radius: 10px; /* Zbog izlazenja ivica slika iz zakrivljenog okvira sam uradio sam donje zakrivljenje. */
+        }
+        .box-1 {
+            height: 80%;
+            background-color: rgb(108, 161, 217);
+            background-image: url("placeholder-image.png");
+            background-size: contain;
+        }
+        .box-2 {
+            height: 20%;
+            text-align: center;
+            line-height: 32px;;
+        }
+        #wrapper-2 {
+            max-width: 960px;
+            width: 90%;
+            margin: 20px auto;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: 1024px) {
+        #container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tile {
+            width: 179.19px;
+        }
+        body {
+            font-size: 1.2em;
+        }
+        }
+        
+        @media screen and (max-width: 768px) {
+        #container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tile {
+            width: 179.19px; /* Iz inspecta sam proverio sirinu trake jednog grida i upisao je ovde, da bi prilikom smanjivanja vidnom 
+                                polja plocica ostajala uvek ista, da li postoji neki drugi nacin za ovo? */
+        }
+        body {
+            font-size: 1.1em;
+        }
+        }
+        @media screen and (max-width: 414px) {
+        #container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .tile {
+            width: 179.19px;
+        }
+            body {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper-1">
+        <header id="header">
+            <h1> Gallery Heading </h1>
+        </header>
+    </div>
+    <div id="container">
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+        <div class="tile">
+            <div class="box-1"> </div>
+            <div class="box-2"> Image Title </div>
+        </div>
+    </div>
+    <div id="wrapper-2">
+        <p> Lorem ipsum dolor sit amet, an utroque docendi pro, te usu facer nulla definiebas. 
+            Te mea nusquam tacimates eleifend, vis et enim phaedrum, cu est epicuri sensibus. Adipisci salutatus in vis, ex debitis maiestatis voluptatibus vis, 
+            nam ubique semper saperet an. Option tritani luptatum nam an, ea aliquip legimus mel. Eos ex zril deleniti ponderum.
+            Lorem ipsum dolor sit amet, an utroque docendi pro, te usu facer nulla definiebas. 
+            Te mea nusquam tacimates eleifend, vis et enim phaedrum, cu est epicuri sensibus. Adipisci salutatus in vis, ex debitis maiestatis voluptatibus vis, 
+            nam ubique semper saperet an. Option tritani luptatum nam an, ea aliquip legimus mel. Eos ex zril deleniti ponderum. </p>
+    </div>
+</body>
+</html>
